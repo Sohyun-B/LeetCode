@@ -5,13 +5,13 @@ class ListNode(object):
 class Solution(object):
     def reverseList(self, head):
 
-        def reverse(node, prev = None):
-            if not node:
-                return prev
+        node, prev = head, None
+        while node:
             next_val, node.next = node.next, prev
-            return reverse(next_val, node)
-        
-        return reverse(head)
-        
-        
-        
+            prev, node = node, next_val
+        return prev
+solution = Solution()
+ans = solution.reverseList(ListNode([1,2,2,1]))
+print(ans)
+                
+                    
