@@ -16,7 +16,7 @@ class MyQueue(object):
     def peek(self):
         if not self.output:
             while self.input:
-                self.output.append(self.input.pop())
+                self.output.append(self.input.pop()) #input()에서 먼저 들어온 것부터 append를 한다
         return self.output[-1]
         
 
